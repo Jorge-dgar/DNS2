@@ -1,0 +1,22 @@
+;
+; informatica.ies.test
+;
+
+
+$TTL 86400
+@   IN  SOA debian.ies.test. admin.ies.test. (
+    2023111001 ; Serial
+    3600       ; Refresh
+    1800       ; Retry
+    1209600    ; Expire
+    86400 )    ; Minimum TTL
+
+    IN  NS  ns1.ies.test.
+    IN  NS  ns2.ies.test.
+
+# Equipos en el subdominio informatica.ies.test
+server01   IN  A  192.168.57.10
+pcprofesor   IN  A  192.168.57.20
+pc01  IN  A  192.168.57.21
+pc02  IN  A  192.168.57.22
+pc03  IN  A  192.168.57.23

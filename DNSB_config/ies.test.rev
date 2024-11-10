@@ -1,0 +1,13 @@
+;
+; 57.168.192
+;
+$TTL 86400
+@ IN SOA debian.ies.test. admin.ies.test. (
+  1 ; Serial
+  3600 ; Refresh
+  1800 ; Retry
+  604800 ; Expire
+  86400 ) ; Negative Cache TTL
+;
+@ IN NS debian.ies.test.
+20 IN PTR debian.ies.test.

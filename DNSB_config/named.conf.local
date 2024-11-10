@@ -1,0 +1,10 @@
+zone "ies.test" {
+    type master;
+    file "/etc/bind/ies.test.dns";  # Archivo de zona que describirá los registros de ies.test
+};
+
+//Zona inversa
+zone "57.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/ies.test.rev";  # Archivo de zona para la red inversa
+};

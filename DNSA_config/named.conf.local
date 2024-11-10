@@ -1,0 +1,15 @@
+//Archivo /etc/bind/named.conf.local
+zone "ies.test" {
+    type master;
+    file "/etc/bind/ies.test.dns";
+};
+
+//Zona inversa
+zone "57.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/ies.test.rev";  
+//Subdominio informatica
+zone "ies.test.informatica" {
+    type master;
+    file "etc/bind/informatica.ies.test";
+};
