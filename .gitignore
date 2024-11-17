@@ -6,6 +6,7 @@
 
 # Ignorar carpeta .vagrant
 .vagrant/
+.vagrant/rgloader
 # User-specific files
 *.rsuser
 *.suo
