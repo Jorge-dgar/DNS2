@@ -1,10 +1,35 @@
 zone "ies.test" {
-    type master;
-    file "/etc/bind/ies.test.dns";  # Archivo de zona que describirá los registros de ies.test
+    type slave;
+    file "/var/cache/bind/ies.test.dns";
+    masters { 192.168.57.10; };  // IP del servidor DNSA (maestro)
 };
 
-//Zona inversa
+zone "informatica.ies.test" {
+    type slave;
+    file "/var/cache/bind/informatica.ies.test";
+    masters { 192.168.57.10; };  // IP del servidor DNSA (maestro)
+};
+
+zone "aulas.ies.test" {
+    type slave;
+    file "/var/cache/bind/aulas.ies.test";
+    masters { 192.168.57.10; };  // IP del servidor DNSA (maestro)
+};
+
 zone "57.168.192.in-addr.arpa" {
-    type master;
-    file "/etc/bind/ies.test.rev";  # Archivo de zona para la red inversa
+    type slave;
+    file "/var/cache/bind/subzonas.ies.rev";
+    masters { 192.168.57.10; };  // IP de DNSA (maestro)
+};
+
+logging {
+    channel default_file {
+        file "/var/log/named_query.log" versions 3 size 5m;
+        severity info;
+        print-time yes;
+        print-severity yes;
+        print-category yes;
+    };
+
+    category queries { default_file; };
 };

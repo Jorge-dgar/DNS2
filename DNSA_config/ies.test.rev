@@ -1,5 +1,5 @@
 ;
-; 57.168.192
+; ies.test.rev
 ;
 $TTL 86400
 @ IN SOA debian.ies.test. admin.ies.test. (
@@ -10,10 +10,5 @@ $TTL 86400
   86400 ) ; Negative Cache TTL
 ;
 @ IN NS debian.ies.test.
-10 IN PTR debian.ies.test.
-11  IN  PTR servidor1.ies.test.
-12  IN  PTR servidor2.ies.test.
-13  IN  PTR servidor3.ies.test.
-21  IN  PTR servidor1.informatica.ies.test.
-22  IN  PTR servidor2.informatica.ies.test.
-23  IN  PTR servidor3.informatica.ies.test.
+1 IN PTR debian.ies.test.
+

@@ -14,7 +14,6 @@ $TTL 86400
     IN  NS  ns1.ies.test.
     IN  NS  ns2.ies.test.
 
-# Equipos en el subdominio informatica.ies.test
 server01   IN  A  192.168.57.10
 pcprofesor   IN  A  192.168.57.20
 pc01  IN  A  192.168.57.21

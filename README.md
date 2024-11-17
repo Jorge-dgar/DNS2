@@ -16,15 +16,20 @@ Dentro de DNSA, nos aseguramos de que se han instalado correctamente los paquete
 `$ host -v`
 `$ systemctl status bind9`
 
-La dirección IP asignada a DNSA es: 192.168.2.10 en la interfaz eth1
-La dirección IP asignada a DNSB es: 192.168.2.20 en la interfaz eth1
-La dirección IP asignada a DNSB es: 192.168.2.30 en la interfaz eth1
+La dirección IP asignada a DNSA es: 192.168.57.10 en la interfaz eth1
+La dirección IP asignada a DNSB es: 192.168.57.100 en la interfaz eth1
+La dirección IP asignada a cliente es: 192.168.57.200 en la interfaz eth1
 
 
 Si hacemos ping desde DNSA a DNSB con las IPs especificadas anteriormente, podemos comprobar que se encuentran en la misma red.
 
 
-# Ejercicios
-## Ejercicio 1: Crea el dominio ies.test en DNSA.
-1.1 Editar el archivo de configuración de BIND
-Accede a la máquina virtual DNSA y abre el archivo de configuración principal de BIND, que generalmente se encuentra en /etc/bind/named.conf.local.
+# Desarrollo de la práctica
+En esta práctica ha sido necesario crear un fichero de zona por cada subdominio especificado en el guión: departamentos, aulas e informática. Además he creado otro fichero de zona para ies.test y para la zona inversa de los mencionados anteriormente.
+Es necesario editar los archivos "named.conf.options" y "named.conf.local" para especificar las zonas con las que trabajan ambas MVs.
+
+# Configuración Vagrantfile
+He especificado en la creación de DNSA y DNSB que se copien los archivos del apartado anterior, para que al iniciar las máquinas se puedan utilizar directamente.
+
+# Resultados de la práctica
+Todas las capturas de pantallas de las pruebas se encuentran en el archivo [pruebas.md](./pruebas.md).

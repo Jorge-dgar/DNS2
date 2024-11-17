@@ -4,12 +4,29 @@ zone "ies.test" {
     file "/etc/bind/ies.test.dns";
 };
 
-//Zona inversa
-zone "57.168.192.in-addr.arpa" {
-    type master;
-    file "/etc/bind/ies.test.rev";  
-//Subdominio informatica
 zone "ies.test.informatica" {
     type master;
     file "etc/bind/informatica.ies.test";
+    allow-transfer { 192.168.57.100; };  // IP de DNSB (esclavo)
+
+};
+
+zone "ies.test.aulas" {
+    type master;
+    file "etc/bind/aulas.ies.test";
+    allow-transfer { 192.168.57.100; };  // IP de DNSB (esclavo)
+
+};
+
+zone "ies.test.departamentos" {
+    type master;
+    file "etc/bind/departamentos.ies.test";
+
+};
+
+zone "57.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/subzonas.ies.rev"; 
+    allow-transfer { 192.168.57.100; };  // IP de DNSB (servidor esclavo)
+ 
 };

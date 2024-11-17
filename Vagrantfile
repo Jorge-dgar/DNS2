@@ -19,8 +19,16 @@ Vagrant.configure("2") do |config|
       # Copiar los archivos de configuración de BIND
       
       cp /tmp/DNSA_config/named.conf.local /etc/bind/named.conf.local
+      cp /tmp/DNSA_config/named.conf.options /etc/bind/named.conf.options
+
       cp /tmp/DNSA_config/ies.test.dns /etc/bind/ies.test.dns
       cp /tmp/DNSA_config/ies.test.rev /etc/bind/ies.test.rev
+      cp /tmp/DNSA_config/informatica.ies.test /etc/bind/informatica.ies.test
+      cp /tmp/DNSA_config/aulas.ies.test /etc/bind/aulas.ies.test
+      cp /tmp/DNSA_config/departamentos.ies.test /etc/bind/departamentos.ies.test
+      cp /tmp/DNSA_config/subzonas.ies.rev /etc/bind/subzonas.ies.rev
+
+
 
       # Eliminar los archivos temporales después de copiarlos
       rm -rf /tmp/DNSA_config
@@ -31,7 +39,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "DNSB" do |dnsb|
     dnsb.vm.box = "debian/bookworm64"        # Box Debian Bookworm
     dnsb.vm.hostname = "dnsb"                # Nombre de la máquina
-    dnsb.vm.network "private_network", itype: "static", ip: "192.168.57.100", netmask: "255.255.255.0"
+    dnsb.vm.network "private_network", type: "static", ip: "192.168.57.100", netmask: "255.255.255.0"
 
      # Copiar archivos de configuración en la mv
     dnsb.vm.provision "file", source: "DNSB_config", destination: "/tmp/DNSB_config"
@@ -45,7 +53,8 @@ Vagrant.configure("2") do |config|
       
       cp /tmp/DNSB_config/named.conf.local /etc/bind/named.conf.local
       cp /tmp/DNSB_config/ies.test.dns /etc/bind/ies.test.dns
-      cp /tmp/DNSB_config/ies.test.rev /etc/bind/ies.test.rev
+
+      
 
     SHELL
   end
@@ -54,7 +63,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "cliente" do |cliente|
     cliente.vm.box = "debian/bookworm64"        # Box Debian Bookworm
     cliente.vm.hostname = "cliente"                # Nombre de la máquina
-    cliente.vm.network "private_network", type: "static", ip: "192.168.2.30", netmask: "255.255.255.0"
+    cliente.vm.network "private_network", type: "static", ip: "192.168.57.200", netmask: "255.255.255.0"
 
     # Provisionar BIND y herramientas DNS en cliente
     cliente.vm.provision "shell", inline: <<-SHELL

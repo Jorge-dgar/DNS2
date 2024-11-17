@@ -1,13 +1,23 @@
 ;
-; ies.test
+; Zona directa para ies.test
 ;
+
 $TTL 86400
-@ IN SOA debian.ies.test. admin.ies.test. (
-  1 ; Serial 
-  3600 ; Refresh
-  1800 ; Retry
-  604800 ; Expire
-  86400 ) ; Negative Cache TTL
-;
-@ IN NS debian.ies.test.
-debian.ies.test. IN A 192.168.57.10
+@   IN  SOA debian.ies.test. admin.ies.test. (
+    2023111701 ; Serial
+    3600       ; Refresh
+    1800       ; Retry
+    1209600    ; Expire
+    86400 )    ; Minimum TTL
+
+    IN  NS  ns1.ies.test.
+    IN  NS  ns2.ies.test.
+
+ns1 IN  A   192.168.57.10
+ns2 IN  A   192.168.57.100
+
+informatica IN  NS  ns1.ies.test.
+aulas       IN  NS  ns2.ies.test.
+
+server01.informatica IN A 192.168.57.10
+server02.aulas       IN A 192.168.57.100
