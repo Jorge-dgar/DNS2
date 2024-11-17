@@ -1,0 +1,21 @@
+;
+; departamentos.ies.test
+;
+
+
+$TTL 86400
+@   IN  SOA debian.ies.test. admin.ies.test. (
+    2023111001 ; Serial
+    3600       ; Refresh
+    1800       ; Retry
+    1209600    ; Expire
+    86400 )    ; Minimum TTL
+
+    IN  NS  ns1.ies.test.
+    IN  NS  ns2.ies.test.
+
+matematicas   IN  A  192.168.57.150
+ingles01   IN  A  192.168.57.151
+ingles02  IN  A  192.168.57.152
+lengua  IN  A  192.168.57.153
+tic  IN  A  192.168.57.154

@@ -1,0 +1,12 @@
+options {
+
+    // Asegúrate de que BIND escuche en la IP correcta
+    listen-on { 192.168.57.10; 127.0.0.1; };
+
+    // Permitir consultas de cualquier red
+    allow-query { any; };
+    allow-transfer { 192.168.57.100; };
+
+
+    recursion yes;
+};

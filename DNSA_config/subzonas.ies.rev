@@ -1,0 +1,32 @@
+;
+; 57.168.192
+;
+
+$TTL 86400
+@   IN  SOA debian.ies.test. admin.ies.test. (
+    2023111001 ; Serial
+    3600       ; Refresh
+    1800       ; Retry
+    1209600    ; Expire
+    86400 )    ; Minimum TTL
+
+    IN  NS  ns1.ies.test.
+    IN  NS  ns2.ies.test.
+
+10  IN  PTR  server01.informatica.ies.test.
+20  IN  PTR  pcprofesor.informatica.ies.test.
+21  IN  PTR  pc01.informatica.ies.test.
+22  IN  PTR  pc02.informatica.ies.test.
+23  IN  PTR  pc03.informatica.ies.test.
+
+100  IN  PTR  server02.aulas.ies.test.
+101  IN  PTR  pc04.aulas.ies.test.
+102  IN  PTR  pc05.aulas.ies.test.
+103  IN  PTR  pc06.aulas.ies.test.
+104  IN  PTR  pc07.aulas.ies.test.
+
+150  IN  PTR  matematicas.departamentos.ies.test.
+151  IN  PTR  ingles01.departamentos.ies.test.
+152  IN  PTR  ingles02.departamentos.ies.test.
+153  IN  PTR  lengua.aulas.ies.test.
+154  IN  PTR  tic.aulas.ies.test.
